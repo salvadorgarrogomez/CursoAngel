@@ -7,3 +7,4 @@ Revisar tambien si el nombre y apellidos son correctos.
 | Nombre | Apellidos | Discord | GitHub | Instalación [SI|NO] | Git [SI|NO] |
 
 | Salvador | Garro | -- | salvadorgarrogomez | SI | SI |
+| Rocio | Juarez | -- | rociojuarez | NO | SI |
