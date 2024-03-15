@@ -9,3 +9,4 @@ Revisar tambien si el nombre y apellidos son correctos.
 | Salvador | Garro | -- | salvadorgarrogomez | SI | SI |    
 | Rocio | Juarez | -- | rociojuarez | NO | SI | 
 | Isabel | Garro | -- | isaelgarro | SI | NO |  
+| David | Sanchez | -- |  davidsanchez | SI | SI |   
