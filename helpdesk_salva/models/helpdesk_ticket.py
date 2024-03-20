@@ -10,5 +10,9 @@ class HelpdeskTicket(models.Model):
     limit_date = fields.Date(help= "Limit date of the ticket")
     assigned = fields.Boolean(help = "Is the ticket assigned")
     acctions_todo = fields.Html()
+    user_id = fields.Many2one(
+        comodel_name = 'res.users', 
+        string="Assigned to",
+        )
 
 
