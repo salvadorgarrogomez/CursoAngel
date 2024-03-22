@@ -16,7 +16,7 @@
         </field>
     </record>
 
-        <record id="view_helpdesk_ticket_form" model="ir.ui.view">
+    <record id="view_helpdesk_ticket_form" model="ir.ui.view">
         <field name="name">view_helpdesk_ticket_form</field>
         <field name="model">helpdesk.ticket</field>
         <field name="arch" type="xml">
@@ -40,12 +40,23 @@
                         <notebook>
                             <page string="Descripcion">
                                 <group name="name">
-                                    <field name="description"/>
+                                    <field name="description"/> 
                                 </group>
                             </page>
-                            <page string="Acciones">
+                            <page string="Acciones TODO">
                                 <group name="name">
                                     <field name="actions_todo"/>
+                                </group>
+                            </page>
+                            <page string="Etiquetas">
+                                <group name="tags">
+                                    <field name="tags_ids" nolabel="1"/>
+                                </group>
+                            </page>
+                            <page string="Acciones DONE">
+                                <button string="Review" name="review_actions" type="object" class="btn-primary"/>
+                                <group>
+                                    <field name="action_ids" nolabel="1"/>
                                 </group>
                             </page>
                         </notebook>  
