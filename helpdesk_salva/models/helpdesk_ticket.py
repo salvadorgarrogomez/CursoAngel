@@ -19,6 +19,9 @@ class HelpdeskTicket(models.Model):
         help = "Is the ticket assigned",
         readonly = True,
     )
+    time = fields.Float(
+        string = "Time",
+    )
     actions_todo = fields.Html()
     sequence = fields.Integer()
 
@@ -52,6 +55,10 @@ class HelpdeskTicket(models.Model):
          ('cancelado', "Cancelado")],
          string = "State",
          default = "nuevo",
+    )
+    color = fields.Integer(
+        string = "Color",
+        default = 0,
     )
 
     # Formas distintas de hacer el mismo proceso: 1
