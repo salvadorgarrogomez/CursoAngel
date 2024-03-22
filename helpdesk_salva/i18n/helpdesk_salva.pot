@@ -1,0 +1,307 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* helpdesk_salva
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-22 08:04+0000\n"
+"PO-Revision-Date: 2024-03-22 08:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: helpdesk_salva
+#: model:res.groups,comment:helpdesk_salva.helpdesk_groups_user
+msgid ""
+"\n"
+"            The user will be able to browse some model.\n"
+"        "
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:res.groups,comment:helpdesk_salva.helpdesk_groups_manager
+msgid ""
+"\n"
+"            The user will be able to manage some model.\n"
+"        "
+msgstr ""
+
+#. module: helpdesk_salva
+#: model_terms:ir.ui.view,arch_db:helpdesk_salva.view_helpdesk_ticket_form
+msgid "Acciones DONE"
+msgstr "Acciones realizadas"
+
+#. module: helpdesk_salva
+#: model_terms:ir.ui.view,arch_db:helpdesk_salva.view_helpdesk_ticket_form
+msgid "Acciones TODO"
+msgstr "Acciones por hacer"
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__action_ids
+msgid "Actions Done"
+msgstr "Acciones realizadas"
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__actions_todo
+msgid "Actions Todo"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.ui.menu,name:helpdesk_salva.all_tickets
+msgid "All Tickets"
+msgstr "Acciones por hacer"
+
+#. module: helpdesk_salva
+#: model:ir.model.fields.selection,name:helpdesk_salva.selection__helpdesk_ticket__state__asignado
+msgid "Asignado"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__assigned
+msgid "Assigned"
+msgstr "Asignado"
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__user_id
+msgid "Assigned to"
+msgstr "Asignado a "
+
+#. module: helpdesk_salva
+#: model:ir.model.fields.selection,name:helpdesk_salva.selection__helpdesk_ticket__state__cancelado
+msgid "Cancelado"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.ui.menu,name:helpdesk_salva.helpdesk_config_menu
+msgid "Config"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model_terms:ir.actions.act_window,help:helpdesk_salva.helpdesk_ticket_action_all
+msgid "Crea un nuevo ticket"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model_terms:ir.actions.act_window,help:helpdesk_salva.helpdesk_ticket_tags_action
+msgid "Crea una nueva etiqueta para tickets"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__create_uid
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_action__create_uid
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_tags__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__create_date
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_action__create_date
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_tags__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,help:helpdesk_salva.field_helpdesk_ticket__date
+msgid "Date of the ticket"
+msgstr "Fecha del ticket"
+
+#. module: helpdesk_salva
+#: model_terms:ir.ui.view,arch_db:helpdesk_salva.view_helpdesk_ticket_form
+#: model_terms:ir.ui.view,arch_db:helpdesk_salva.view_helpdesk_ticket_tags_form
+msgid "Descripcion"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__description
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_action__description
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_tags__description
+msgid "Description"
+msgstr "Descripcion"
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__display_name
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_action__display_name
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_tags__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_action__duration
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_tags__duration
+msgid "Duration"
+msgstr "Duracion"
+
+#. module: helpdesk_salva
+#: model:ir.model.fields.selection,name:helpdesk_salva.selection__helpdesk_ticket__state__en_proceso
+msgid "En proceso"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model_terms:ir.ui.view,arch_db:helpdesk_salva.view_helpdesk_ticket_form
+msgid "Etiquetas"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.ui.menu,name:helpdesk_salva.helpdesk_menu
+msgid "HelpDesk"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.module.category,name:helpdesk_salva.helpdesk_security_category
+msgid "Helpdesk"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.actions.act_window,name:helpdesk_salva.helpdesk_ticket_tags_action
+#: model:ir.ui.menu,name:helpdesk_salva.helpdesk_ticket_tags_menu
+#: model_terms:ir.ui.view,arch_db:helpdesk_salva.view_helpdesk_ticket_tags_tree
+msgid "Helpdesk Tags"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model,name:helpdesk_salva.model_helpdesk_ticket
+msgid "Helpdesk Ticket"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model,name:helpdesk_salva.model_helpdesk_ticket_action
+msgid "Helpdesk Ticket Action"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model,name:helpdesk_salva.model_helpdesk_ticket_tags
+msgid "Helpdesk Ticket Tags"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.actions.act_window,name:helpdesk_salva.helpdesk_ticket_action_all
+msgid "Helpdesk Tickets"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__id
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_action__id
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_tags__id
+msgid "ID"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,help:helpdesk_salva.field_helpdesk_ticket__assigned
+msgid "Is the ticket assigned"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket____last_update
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_action____last_update
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_tags____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__write_uid
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_action__write_uid
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_tags__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__write_date
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_action__write_date
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_tags__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__limit_date
+msgid "Limit Date"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,help:helpdesk_salva.field_helpdesk_ticket__limit_date
+msgid "Limit date of the ticket"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:res.groups,name:helpdesk_salva.helpdesk_groups_manager
+msgid "Manager"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__name
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_action__name
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_tags__name
+msgid "Name"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields.selection,name:helpdesk_salva.selection__helpdesk_ticket__state__nuevo
+msgid "Nuevo"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__patner_id
+msgid "Partner"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields.selection,name:helpdesk_salva.selection__helpdesk_ticket__state__pendiente
+msgid "Pendiente"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields.selection,name:helpdesk_salva.selection__helpdesk_ticket__state__resuelto
+msgid "Resuelto"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model_terms:ir.ui.view,arch_db:helpdesk_salva.view_helpdesk_ticket_form
+msgid "Review"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__sequence
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_action__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__state
+msgid "State"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model_terms:ir.ui.view,arch_db:helpdesk_salva.view_helpdesk_ticket_tags_form
+msgid "Tag"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket__tags_ids
+msgid "Tags"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.model.fields,field_description:helpdesk_salva.field_helpdesk_ticket_action__ticket_id
+msgid "Ticket"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:ir.ui.menu,name:helpdesk_salva.helpdesk_ticket_submenu
+#: model_terms:ir.ui.view,arch_db:helpdesk_salva.view_helpdesk_ticket_form
+#: model_terms:ir.ui.view,arch_db:helpdesk_salva.view_helpdesk_ticket_tree
+msgid "Tickets"
+msgstr ""
+
+#. module: helpdesk_salva
+#: model:res.groups,name:helpdesk_salva.helpdesk_groups_user
+msgid "User"
+msgstr ""
