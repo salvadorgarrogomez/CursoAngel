@@ -33,7 +33,10 @@
                     <group name="main">
                         <group name="user">
                             <field name="user_id" />
+                            <field name="user_email" />
                             <field name="assigned" />
+                            <field name="partner_id" />
+                            <field name="partner_email" />
                         </group>
                         <group name="dates">
                             <field name="date" />
@@ -52,12 +55,21 @@
                                 </group>
                             </page>
                             <page string="Etiquetas">
+                                <group name="tag_name">
+                                    <field name="tag_name" />
+                                    <button string="Create"
+                                        name="create_and_link_ticket"
+                                        type="object"
+                                        context="{}"/>    
+                                </group>
                                 <group name="tags">
                                     <field name="tags_ids" nolabel="1" />
                                 </group>
                             </page>
                             <page string="Acciones DONE">
-                                <button string="Review" name="review_actions" type="object"
+                                <button string="Review" 
+                                    name="review_actions" 
+                                    type="object"
                                     class="btn-primary" />
                                 <group>
                                     <field name="action_ids" nolabel="1" />
@@ -116,15 +128,15 @@
                 por nombre e id-->
                 <field name="name" />
                 <field name="user_id" />
-                <field name="assigned" />
+                <!-- <field name="assigned" />-->
                 <field name="date" />
 
                 <!--Filtrar
                 por ticket asignados-->
-                <filter name="user_assigned" string="Usuarios Asignados"
-                    domain="[('user_id', '!=', 'False')]" />
+                <!--<filter name="user_assigned" string="Usuarios Asignados"
+                    domain="[('user_id', '!=', False)]" />
                 <filter name="assigned" string="Asignados"
-                    domain="[('assigned', '=', 'True')]" />
+                    domain="[('assigned', '=', True)]" />-->
 
                 <!-- Filtrar ticket sin date_due -->
                 <filter name="date" string="No date"

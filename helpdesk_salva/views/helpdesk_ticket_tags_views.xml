@@ -22,6 +22,9 @@
                 <group name="description" string="Descripcion">
                     <field name="description" nolabel="1"/> 
                 </group>
+                <group name="ticket">
+                    <field name="ticket_ids" nolabel="1" />
+                </group>
             </form>
         </field>
     </record>
