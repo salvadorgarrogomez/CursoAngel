@@ -32,11 +32,15 @@
                     </div>
                     <group name="main">
                         <group name="user">
-                            <field name="user_id" />
+                            <field name="user_id" options="{'no_create': True}"/>
                             <field name="user_email" />
-                            <field name="assigned" />
-                            <field name="partner_id" />
+                            <field name="ticket_company" />
+                            <field name="partner_id" 
+                                options="{'no_quick_create': True, 'no_open': True}"
+                                domain="[('is_company','=', ticket_company)], [('is_company','=', False)]" /> 
+                                <!-- "[('is_company','=', False)]" en el caso de que solo me muestre los usuarios del partner -->
                             <field name="partner_email" />
+                            <field name="assigned" />
                         </group>
                         <group name="dates">
                             <field name="date" />
@@ -63,7 +67,7 @@
                                         context="{}"/>    
                                 </group>
                                 <group name="tags">
-                                    <field name="tags_ids" nolabel="1" />
+                                    <field name="tags_ids"/>
                                 </group>
                             </page>
                             <page string="Acciones DONE">
@@ -72,7 +76,20 @@
                                     type="object"
                                     class="btn-primary" />
                                 <group>
-                                    <field name="action_ids" nolabel="1" />
+                                    <field name="action_ids" context="{'default_user_id': user_id}">
+                                        <tree string="Action">
+                                            <field name="sequence" widget="handle"/>
+                                            <field name="name" />
+                                            <field name="duration" />
+                                        </tree>
+                                        <form string="Action">
+                                            <group name="main">
+                                                <field name="name" />
+                                                <field name="description" />
+                                                <field name="duration" />
+                                            </group>
+                                        </form>
+                                    </field>
                                 </group>
                             </page>
                         </notebook>

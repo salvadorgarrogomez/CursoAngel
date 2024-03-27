@@ -62,6 +62,9 @@ class HelpdeskTicket(models.Model):
     tag_name = fields.Char(
         string = "Tag name",
     )
+    ticket_company = fields.Boolean(
+        string = "Ticket Company",
+    )
 
 
 
@@ -104,6 +107,8 @@ class HelpdeskTicket(models.Model):
 
     def review_actions(self):
         self.ensure_one()
+#        import pdb; pdb.set_trace()    #Forzar debug en una accion en concreto sin colocar un breakpoint en VSC
+#        import wdb; wdb.set_trace()     #Forzar debug en una accion en concreta con docker WDB 
         self.action_ids.review_all()
 
     @api.model
@@ -160,6 +165,7 @@ class HelpdeskTicket(models.Model):
         #             })
 
     # Creo el ticket desde la escritura del tag_ids
+        
     def create_and_link_ticket(self):
         self.ensure_one()
         # Comprueba si la etiqueta ya existe
@@ -173,6 +179,28 @@ class HelpdeskTicket(models.Model):
             'tag_name': False  # Limpia el campo tag_name
         })
 
+#    def create_and_link_ticket(self):
+#        self.ensure_one()
+#        tag = self.env['helpdesk.ticket.tags'].create({'name': self.tag_name})
+#        #  Odoo version 14 y posteriores
+#        self.write({
+#            'tags_ids': [(0, 0, {'name': self.tag_name})],
+#            'tag_name': False
+#        })
+
+
+#    def create_and_link_ticket(self):
+#        self.ensure_one()
+#        tag = self.env['helpdesk.ticket.tags'].create({'name': self.tag_name})
+        #  Odoo version 14 y posteriores
+#        self.write({
+#            'tags_ids': [fields.Command.create({'name': self.tag_name})],
+#            'tag_name':False})
+        # Odoo version 12 y anteriores
+        # self.write({
+        #     'tags_ids': [(0, 0, {'name': self.tag_name})],
+        #     'tag_name': False
+        #     })
         
     # Crear el tag asociado al ticket
     def create_and_link_ticket_tag(self):
