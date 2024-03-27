@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_helpdesk_ticket_tags_tree" model="ir.ui.view">
+        <field name="name">view_helpdesk_ticket_tags_tree</field>
+        <field name="model">helpdesk.ticket.tags</field>
+        <field name="arch" type="xml">
+            <tree string="Helpdesk Tags">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_helpdesk_ticket_tags_form" model="ir.ui.view">
+        <field name="name">view_helpdesk_ticket_tags_form</field>
+        <field name="model">helpdesk.ticket.tags</field>
+        <field name="arch" type="xml">
+            <form string="Tag">
+                <group name="main">
+                    <field name="name"/>
+                </group>
+                <group name="description" string="Descripcion">
+                    <field name="description" nolabel="1"/> 
+                </group>
+                <group name="ticket">
+                    <field name="ticket_ids" nolabel="1" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record id='helpdesk_ticket_tags_action' model='ir.actions.act_window'>
+        <field name='name'>Helpdesk Tags</field>
+        <field name='res_model'>helpdesk.ticket.tags</field>
+        <field name='view_mode'>tree,form</field>
+        <field name='help' type="html">
+            <p class='oe_view_nocontent_create'>
+                Crea una nueva etiqueta para tickets
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="helpdesk_config_menu" name="Config" sequence="10" parent="helpdesk_menu"/>
+    <menuitem id="helpdesk_ticket_tags_menu" parent="helpdesk_config_menu" action="helpdesk_ticket_tags_action" sequence="20"  />
+
+</odoo>
