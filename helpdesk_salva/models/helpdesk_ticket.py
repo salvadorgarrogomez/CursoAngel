@@ -1,5 +1,5 @@
 from odoo import fields,api,models,_
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
 
 class HelpdeskTicket(models.Model):
     _name = "helpdesk.ticket"
@@ -218,3 +218,10 @@ class HelpdeskTicket(models.Model):
         self.write({
             'tag_name': False
             })
+
+    @api.constrains('time')
+    def _check_time(self):
+#        for ticket in self:
+#            if ticket.time < 0:
+        for ticket in self.filtered(lambda x: x.time < 0):
+                raise ValidationError(_('The PIN must be a sequence of digits'))
