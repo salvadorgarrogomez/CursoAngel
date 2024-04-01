@@ -18,9 +18,10 @@
     'data':[
      'security/helpdesk_security.xml',
      'security/ir.model.access.csv',
-     'views/helpdesk_ticket_views.xml',
      'views/helpdesk_ticket_tags_views.xml',
+     'views/helpdesk_ticket_views.xml',
      'views/helpdesk_ticket_actions_views.xml',
+     'data/tag_cron.xml',
             ]
 
 }

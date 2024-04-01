@@ -6,6 +6,10 @@ class HelpdeskTicket(models.Model):
     _description = "Helpdesk Ticket"
     _order = "sequence"
 
+    @api.model
+    def get_default_user(self):
+        return self.env.user
+
     name = fields.Char(
         required= True,
         copy= False
@@ -33,7 +37,9 @@ class HelpdeskTicket(models.Model):
 
     user_id = fields.Many2one(
         comodel_name = 'res.users', 
-        string="Assigned to"
+        string="Assigned to",
+        # default = lambda self: self.env.user,
+        default = get_default_user
     )
     user_email= fields.Char(
         string = "User Email",
@@ -154,9 +160,9 @@ class HelpdeskTicket(models.Model):
     def create_and_link_tag(self):
         self.ensure_one()
         #   Creo el ticket y lo asigno
-        tag = self.env['helpdesk.ticket.tags'].create({'name': self.tag_name})
+        # tag = self.env['helpdesk.ticket.tags'].create({'name': self.tag_name})
         #   Odoo version 14 y posteriores
-        self.write({'tags_ids': [fields.Command.link(tag.id, 0)],
+        self.write({'tags_ids': [fields.Command.create({'name'.id, 0})],
                     'tag_name': False
                     })
         # Odoo version 12 y anteriores
