@@ -22,6 +22,7 @@
      'views/helpdesk_ticket_views.xml',
      'views/helpdesk_ticket_actions_views.xml',
      'data/tag_cron.xml',
+     'wizards/create_ticket_views.xml',
             ]
 
 }
