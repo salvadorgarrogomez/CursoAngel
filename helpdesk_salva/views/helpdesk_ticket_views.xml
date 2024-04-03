@@ -11,6 +11,7 @@
                 <field name="user_id" />
                 <field name="date" optional="show" />
                 <field name="limit_date" optional="hide" />
+                <field name="time" />
                 <field name="state" />
             </tree>
         </field>
@@ -234,16 +235,6 @@
             </p>
         </field>
     </record>
-
-    <!-- Menus del views helpdesk_ticket_views-->
-    <menuitem id="helpdesk_menu" name="HelpDesk" sequence="10" />
-    <menuitem id="helpdesk_ticket_submenu" name="Tickets" sequence="10" parent="helpdesk_menu" />
-    <menuitem id="all_tickets" name="All Tickets" sequence="10" parent="helpdesk_ticket_submenu"
-        action="helpdesk_ticket_action_all" />
-
-    <!-- Menus del views helpdesk_ticket_tags_views-->
-    <menuitem id="helpdesk_config_menu" name="Config" sequence="10" parent="helpdesk_menu"/>
-    <menuitem id="helpdesk_ticket_tags_menu" parent="helpdesk_config_menu" action="helpdesk_ticket_tags_action" sequence="20"  />
 
 
 </odoo>

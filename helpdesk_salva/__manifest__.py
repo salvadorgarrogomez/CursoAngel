@@ -18,11 +18,16 @@
     'data':[
      'security/helpdesk_security.xml',
      'security/ir.model.access.csv',
+     'views/helpdesk_ticket_menu.xml',
+     'wizards/create_ticket_views.xml',
      'views/helpdesk_ticket_tags_views.xml',
      'views/helpdesk_ticket_views.xml',
      'views/helpdesk_ticket_actions_views.xml',
      'data/tag_cron.xml',
-     'wizards/create_ticket_views.xml',
+     'reports/tickets_reports_templates.xml',
+     'reports/ticket_report.xml',
+     'reports/partner_card_reports_templates.xml',
+     'reports/partner_card_report.xml',
             ]
 
 }

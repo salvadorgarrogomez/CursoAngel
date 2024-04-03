@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- Menus del views helpdesk_ticket_views-->
+    <menuitem id="helpdesk_menu" name="HelpDesk" sequence="10" />
+    <menuitem id="helpdesk_ticket_submenu" name="Tickets" sequence="10" parent="helpdesk_menu" />
+    <menuitem id="all_tickets" name="All Tickets" sequence="10" parent="helpdesk_ticket_submenu"
+        action="helpdesk_ticket_action_all" />
+
+
+
+</odoo>
