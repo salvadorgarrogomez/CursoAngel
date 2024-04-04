@@ -2,6 +2,7 @@ from odoo import fields,api,models,Command,_
 
 class CreateTicket(models.TransientModel):
     _name='create.ticket'
+    _description='description'
 
     @api.model
     def _get_default_tags(self):
@@ -9,6 +10,7 @@ class CreateTicket(models.TransientModel):
             return [Command.set(self.env.context.get('active_ids'))]
 
     name = fields.Char()
+    description = fields.Text()
     tags_ids = fields.Many2many(
         comodel_name = 'helpdesk.ticket.tags',
         string = "Tags",
