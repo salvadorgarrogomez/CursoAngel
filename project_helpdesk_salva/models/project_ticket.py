@@ -15,6 +15,7 @@ class ProjectTicket(models.Model):
 
     actions_todo = fields.Html()
 
+#### Campos necesarios, para ocultar funcionalidades del _inherits de herencia
     def action_assign_to_me(self):
         self.ensure_one()
         return self.task_id.action_assign_to_me()

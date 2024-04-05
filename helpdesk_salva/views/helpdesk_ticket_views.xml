@@ -37,9 +37,11 @@
                             <field name="user_email" />
                             <field name="ticket_company" />
                             <field name="partner_id" 
-                                options="{'no_quick_create': True, 'no_open': True}"
-                                domain="[('is_company','=', ticket_company)], [('is_company','=', False)]" /> 
-                                <!-- "[('is_company','=', False)]" en el caso de que solo me muestre los usuarios del partner -->
+                                options="{'no_quick_create': True, 'no_open': True}" 
+                                context="{'defult_user_id': user_id, 'default_is_company': False}" 
+                                domain="[('user_id','=', user_id)], [('is_company','='; False)]" />
+                                <!--    domain="[('is_company','=', ticket_company), ('is_company','=', False)]" /> 
+                                "[('is_company','=', False)]" en el caso de que solo me muestre los usuarios del partner -->
                             <field name="partner_email" />
                             <field name="assigned" />
                         </group>
