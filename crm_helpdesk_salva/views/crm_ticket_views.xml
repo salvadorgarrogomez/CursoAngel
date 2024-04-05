@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_crm_ticket_form" model="ir.ui.view">
+        <field name="name">view_crm_ticket_form</field>
+        <field name="model">crm.ticket</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='internal_notes']" position="before">
+                <page string="Ticket">
+                    <group>
+                        <field name="actions_todo"></field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+<!-- 
+    <record id="view_crm_ticket_tree" model="ir.ui.view">
+        <field name="name">view_crm_ticket_tree</field>
+        <field name="model">crm.ticket</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="actions_todo"></field>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_crm_ticket_search" model="ir.ui.view">
+        <field name="name">view_crm_ticket_search</field>
+        <field name="model">crm.ticket</field>
+        <field name="arch" type="xml">
+            <search string="Ticket">
+                <field name="name" />
+                <group name="groupby" string="Group by">
+                    <filter name="name_groupby" string="name" 
+                        context="{'group_by': 'name'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="crm_ticket_action" model="ir.actions.act_window">
+        <field name="name">Ticket</field>
+        <field name="res_model">crm.ticket</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new ticket
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="helpdesk_menu"
+        string="Helpdesk"
+        sequence="20"/>
+    <menuitem
+        id="crm_ticket_main_menu"
+        string="Ticket"
+        parent="helpdesk_menu"
+        sequence="20"/>
+    <menuitem
+        id="crm_ticket_menu"
+        action="crm_ticket_action"
+        parent="crm_ticket_main_menu"
+        sequence="20"/>
+-->
+</odoo>

@@ -16,6 +16,9 @@ class SaleOrder(models.Model):
         self.write({'ticket_ids': [Command.create({'name':self.name,'tag_ids': 
                                                    [Command.set(tag_ids)]})]
                     })
+    def _action_cancel(self):
+        res = super(SaleOrder, self)._action_cancel()
+        self.ticket_ids.write({'state': 'cancelado'})
 
         # Método para crear un ticket relacionado con la orden de venta
 #    def create_ticket(self):
@@ -32,3 +35,4 @@ class SaleOrder(models.Model):
 #                    'name': self.name,  # Nombre del ticket igual al nombre de la orden de venta
 #                    'tags_ids': [Command.set(tag_ids)]  # Asignar las etiquetas obtenidas anteriormente
 #                })]})
+
