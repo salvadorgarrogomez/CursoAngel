@@ -29,6 +29,9 @@
      'reports/ticket_report.xml',
      'reports/partner_card_reports_templates.xml',
      'reports/partner_card_report.xml',
-            ]
+            ],
+     'demo':[
+         'demo/demo_helpdesk.xml',
+            ],
 
 }
