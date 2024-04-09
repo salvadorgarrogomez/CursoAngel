@@ -1,8 +1,10 @@
 from odoo import fields,api,models,_
 from odoo.exceptions import UserError, ValidationError
 
+
 class HelpdeskTicket(models.Model):
     _name = "helpdesk.ticket"
+    _inherit = ['mail.thread','mail.activity.mixin']
     _description = "Helpdesk Ticket"
     _order = "sequence"
 
@@ -39,19 +41,21 @@ class HelpdeskTicket(models.Model):
         comodel_name = 'res.users', 
         string="Assigned to",
         # default = lambda self: self.env.user,
-        default = get_default_user
+        default = get_default_user,
+        # Procedente del _inherit
+        tracking = True,
     )
     user_email= fields.Char(
         string = "User Email",
-        related="user_id.partner_id.email"
+        related="user_id.partner_id.email",
     )
     partner_id = fields.Many2one(
         comodel_name = 'res.partner', 
-        string="Partner"
+        string="Partner",
     )
     partner_email= fields.Char(
         string = "Partner Email",
-        related="partner_id.email"
+        related="partner_id.email",
     )
     action_ids = fields.One2many(
         comodel_name = 'helpdesk.ticket.action',

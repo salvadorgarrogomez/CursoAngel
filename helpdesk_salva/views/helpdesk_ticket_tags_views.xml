@@ -54,8 +54,6 @@
         <field name="target">new</field> 
     </record>
 
-        <!-- Menus del views helpdesk_ticket_tags_views-->
-    <menuitem id="helpdesk_config_menu" name="Config" sequence="10" parent="helpdesk_menu"/>
     <menuitem id="helpdesk_ticket_tags_menu" parent="helpdesk_config_menu" action="helpdesk_ticket_tags_action" sequence="20"  />
 
 

@@ -11,7 +11,9 @@
                 <field name="user_id" />
                 <field name="date" optional="show" />
                 <field name="limit_date" optional="hide" />
-                <field name="time" />
+                <!-- Herencia  -->
+                <field name="activity_ids" widget="list_activity" optional="show" />
+                <!-- <field name="time" /> -->
                 <field name="state" />
             </tree>
         </field>
@@ -38,9 +40,10 @@
                             <field name="ticket_company" />
                             <field name="partner_id" 
                                 options="{'no_quick_create': True, 'no_open': True}" 
-                                context="{'defult_user_id': user_id, 'default_is_company': False}" 
-                                domain="[('user_id','=', user_id)], [('is_company','='; False)]" />
+                                context="{'default_user_id': user_id, 'default_is_company': False}" 
+                                domain="[('is_company','=', ticket_company), ('is_company','=', False)]" />
                                 <!--    domain="[('is_company','=', ticket_company), ('is_company','=', False)]" /> 
+                                    [('user_id','=', user_id), ('is_company','=', False)]
                                 "[('is_company','=', False)]" en el caso de que solo me muestre los usuarios del partner -->
                             <field name="partner_email" />
                             <field name="assigned" />
@@ -102,6 +105,11 @@
                         </notebook>
                     </group>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="activity_ids" />
+                    <field name="message_ids" />
+                </div>
             </form>
         </field>
     </record>
@@ -237,6 +245,10 @@
             </p>
         </field>
     </record>
+
+
+    <menuitem id="all_tickets" name="All Tickets" sequence="10" parent="helpdesk_ticket_submenu"
+        action="helpdesk_ticket_action_all" />
 
 
 </odoo>

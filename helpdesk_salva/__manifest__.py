@@ -12,13 +12,14 @@
     'summary':'Manage helpdesk de ticket',
     'version':'16.0.1.0.0',
     'author':'Salva Garro',
-    'depends':['base'
+    'depends':['base',
+               'mail',
                ],
     'license':'AGPL-3',
     'data':[
      'security/helpdesk_security.xml',
      'security/ir.model.access.csv',
-     'views/helpdesk_ticket_menu.xml',
+     'views/helpdesk_menu_views.xml',
      'wizards/create_ticket_views.xml',
      'views/helpdesk_ticket_tags_views.xml',
      'views/helpdesk_ticket_views.xml',
