@@ -4,9 +4,12 @@ from odoo.tests.common import TransactionCase
 class TestHelpdeskTicket(TransactionCase):
     def setUp(self):
         super (TestHelpdeskTicket, self).setUp()
+        # Un self u otro, no los dos al mismo tiempo
         self.ticket = self.env['helpdesk.ticket'].create({
             'name': 'test ticket',
         })
+
+        #self.ticket = self.env.ref('helpdesk_salva.demo_admin_ticket')
 
     def test_time_can_not_be_negative(self):
         self.ticket.time = 3
