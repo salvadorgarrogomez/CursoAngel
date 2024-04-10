@@ -1,0 +1,21 @@
+<odoo>
+    <template id="report_partner_card">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <div class="page" style="page-break-before: always;">
+                    <div class="row mt-32 mb-32">
+                        <div class="col-auto col-8 mw-100 mb-2">
+                            <strong>Partner:</strong>
+                            <div t-field="doc.name" />
+                        </div>                  
+                        <div class="col-auto col-4 mw-100 mb-2" style="float: right;">
+                            <div t-if="doc.image_1920">
+                                <img t-att-src="image_data_uri(doc.image_1920)" style="max-width: 100%; height: auto;" />
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,10 +1,16 @@
 from odoo import fields,api,models,_
 from odoo.exceptions import UserError, ValidationError
 
+
 class HelpdeskTicket(models.Model):
     _name = "helpdesk.ticket"
+    _inherit = ['mail.thread','mail.activity.mixin']
     _description = "Helpdesk Ticket"
     _order = "sequence"
+
+    @api.model
+    def get_default_user(self):
+        return self.env.user
 
     name = fields.Char(
         required= True,
@@ -33,19 +39,23 @@ class HelpdeskTicket(models.Model):
 
     user_id = fields.Many2one(
         comodel_name = 'res.users', 
-        string="Assigned to"
+        string="Assigned to",
+        # default = lambda self: self.env.user,
+        default = get_default_user,
+        # Procedente del _inherit
+        tracking = True,
     )
     user_email= fields.Char(
         string = "User Email",
-        related="user_id.partner_id.email"
+        related="user_id.partner_id.email",
     )
     partner_id = fields.Many2one(
         comodel_name = 'res.partner', 
-        string="Partner"
+        string="Partner",
     )
     partner_email= fields.Char(
         string = "Partner Email",
-        related="partner_id.email"
+        related="partner_id.email",
     )
     action_ids = fields.One2many(
         comodel_name = 'helpdesk.ticket.action',
@@ -154,9 +164,9 @@ class HelpdeskTicket(models.Model):
     def create_and_link_tag(self):
         self.ensure_one()
         #   Creo el ticket y lo asigno
-        tag = self.env['helpdesk.ticket.tags'].create({'name': self.tag_name})
+        # tag = self.env['helpdesk.ticket.tags'].create({'name': self.tag_name})
         #   Odoo version 14 y posteriores
-        self.write({'tags_ids': [fields.Command.link(tag.id, 0)],
+        self.write({'tags_ids': [fields.Command.create({'name'.id, 0})],
                     'tag_name': False
                     })
         # Odoo version 12 y anteriores

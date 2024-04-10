@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Menus del views helpdesk_ticket_views-->
+    <menuitem id="helpdesk_menu" name="HelpDesk" sequence="10" />
+    <menuitem id="helpdesk_ticket_submenu" name="Tickets" sequence="10" parent="helpdesk_menu" />
+
+    <!-- Menus del views helpdesk_ticket_tags_views-->
+    <menuitem id="helpdesk_config_menu" name="Config" sequence="10" parent="helpdesk_menu"/>
+        
+
+</odoo>

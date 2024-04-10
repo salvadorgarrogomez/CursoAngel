@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+project_helpdesk_salva.access_project_ticket,access_project_ticket,project_helpdesk_salva.model_project_ticket,base.group_user,1,1,1,1

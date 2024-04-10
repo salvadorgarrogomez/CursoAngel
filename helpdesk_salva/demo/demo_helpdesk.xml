@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- Buscar info en el metada de los user -->
+    <record id="demo_admin_ticket" model="helpdesk.ticket">
+        <field name="name">Helpdesk ticket demo. Admin</field>
+        <field name="user_id" ref="base.user_admin" />
+        <field name="time" eval="5" />
+    </record>
+
+    <record id="demo_user_ticket" model="helpdesk.ticket">
+        <field name="name">Helpdesk ticket demo. User</field>
+        <field name="user_id" ref="base.user_demo" />
+        <field name="time" eval="4" />
+    </record>
+
+</odoo>

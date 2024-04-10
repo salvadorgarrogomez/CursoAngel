@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_project_ticket_form" model="ir.ui.view">
+        <field name="name">view_project_ticket_form</field>
+        <field name="model">project.ticket</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="project.view_task_form2" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Ticket">
+                    <group>
+                        <field name="actions_todo"></field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+<!-- 
+    <record id="view_project_ticket_tree" model="ir.ui.view">
+        <field name="name">view_project_ticket_tree</field>
+        <field name="model">project.ticket</field>
+        <field name="inherit_id" ref="project.view_task_tree2" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="actions_todo"></field>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_project_ticket_search" model="ir.ui.view">
+        <field name="name">view_project_ticket_search</field>
+        <field name="model">project.ticket</field>
+        <field name="arch" type="xml">
+            <search string="Ticket">
+                <field name="name" />
+                <group name="groupby" string="Group by">
+                    <filter name="name_groupby" string="name" 
+                        context="{'group_by': 'name'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+-->
+    <record id="project_ticket_action" model="ir.actions.act_window">
+        <field name="name">Ticket</field>
+        <field name="res_model">project.ticket</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new ticket
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="helpdesk_menu"
+        name="Helpdesk"
+        sequence="20"/>
+    <menuitem
+        id="project_ticket_main_menu"
+        name="Ticket"
+        parent="helpdesk_menu"
+        sequence="20"/>
+    <menuitem
+        id="project_ticket_menu"
+        action="project_ticket_action"
+        parent="project_ticket_main_menu"
+        sequence="20"/>
+
+</odoo>
