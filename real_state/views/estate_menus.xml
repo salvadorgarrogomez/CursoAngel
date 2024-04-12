@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="properties_menu" name="Real Estate" sequence="10" />
+    <menuitem id="adverti_menu_submenu" name="Advertisements" sequence="10" parent="properties_menu" />
+
+</odoo>

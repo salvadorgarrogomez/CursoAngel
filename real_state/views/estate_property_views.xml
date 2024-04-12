@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="living_place_action" model="ir.actions.act_window">
+        <field name="name">Properties</field>
+        <field name="res_model">living.place</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Add living places</p>
+        </field>
+    </record>
+
+    <menuitem id="adverti_menu" name="Properties" parent="adverti_menu_submenu"
+        action="living_place_action" />
+
+</odoo>

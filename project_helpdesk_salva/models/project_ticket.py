@@ -3,8 +3,10 @@ from odoo import fields,api,models
 
 class ProjectTicket(models.Model):
     _name = 'project.ticket'
-    _inherits = {'project.task': 'task_id'}
     _description = 'Project Ticket'
+    _inherits = {'project.task': 'task_id' }
+    _inherit = {'mail.thread'}
+
 
     task_id = fields.Many2one(
         comodel_name='project.task',
@@ -35,3 +37,4 @@ class ProjectTicket(models.Model):
     def action_dependent_tasks(self):
         self.ensure_one()
         return self.task_id.action_dependent_tasks()
+    
