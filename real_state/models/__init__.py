@@ -1,0 +1,1 @@
+from . import living_place

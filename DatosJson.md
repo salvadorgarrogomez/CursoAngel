@@ -12,8 +12,8 @@
             "program": "/home/odoo/odoo/odoo-bin",
             "args": [
                 "-c/home/odoo/odoo.conf",
-                "--update=helpdesk_salva",
-                //"--init=helpdesk_salva",
+                //"--update=helpdesk_salva",
+                "--init=helpdesk_salva",
                 "--update=sales_helpdesk_salva",
                 //"--init=sales_helpdesk_salva",
                 //"--update=crm_helpdesk_salva",
