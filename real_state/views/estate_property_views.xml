@@ -1,6 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <record id="view_living_place_tree" model="ir.ui.view">
+        <field name="name">view_living_place_tree</field>
+        <field name="model">living.place</field>
+        <field name="arch" type="xml">
+            <tree string="Livings">
+                <field name="name" />
+                <field name="postcode" />
+                <field name="bedrooms" />
+                <field name="living_area" />
+                <field name="expected_price" />
+                <field name="selling_price" />
+                <field name="date_availability" />
+            </tree>
+        </field>
+    </record>
+ 
+    <record id="view_living_place_form" model="ir.ui.view">
+        <field name="name">view_living_place_form</field>
+        <field name="model">living.place</field>
+        <field name="arch" type="xml">
+            <form string="Livings">
+                <sheet>
+                    <div>
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                        <field name="tags_id" widget="many2many_tags"/>
+                    </div>
+                    <group name="main">
+                        <group name="datos">
+                            <field name="property_type" />
+                            <field name="postcode" />
+                            <field name="date_availability" />                           
+                        </group>
+                        <group>
+                            <field name="expected_price" />
+                            <field name="selling_price" />
+                        </group>
+                        <notebook>
+                            <page name="description" string="Description">
+                                <group>
+                                    <field name="description" />
+                                    <field name="bedrooms" />
+                                    <field name="living_area" />
+                                    <field name="facades" />
+                                    <field name="garage" />
+                                    <field name="garden" />
+                                    <field name="garden_area" />
+                                    <field name="garden_orientation" />
+                                </group>
+                            </page>
+                            <page string="Offers">
+                                <group>
+                                    <field name="offer_ids" context="{'default_user_id': user_id}">
+                                        <tree>
+                                            <field name="price" />
+                                            <field name="partner_id" />
+                                            <field name="status" />
+                                        </tree>
+                                        <form>
+                                            <group name="main">
+                                                <field name="price" />
+                                                <field name="partner_id" />
+                                                <field name="status" />
+                                            </group>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>                            
+                            <page name="other_info" string="Other Info">
+                                <group>
+                                    <field name="user_id" />
+                                    <field name="partner_id" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_living_place_search" model="ir.ui.view">
+        <field name="name">view_living_place_search</field>
+        <field name="model">living.place</field>
+        <field name="arch" type="xml">
+            <search string="Livings">
+                <field name="name" />
+                <field name="postcode" />
+                <field name="expected_price" />
+                <field name="bedrooms" />
+                <field name="living_area" />
+                <field name="facades" />
+                <filter name="available" string="Available" domain="[('state', '=', 'new')],[('state', '=', 'offer received')]" />
+                <group name="group_by" string="Postcode">
+                    <filter name="filter_postcode" string="Postcode" context="{'group_by': 'postcode'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
     <record id="living_place_action" model="ir.actions.act_window">
         <field name="name">Properties</field>
         <field name="res_model">living.place</field>
@@ -10,7 +111,7 @@
         </field>
     </record>
 
-    <menuitem id="adverti_menu" name="Properties" parent="adverti_menu_submenu"
+    <menuitem id="adverti_menu" name="Properties" sequence="10" parent="adverti_menu_submenu"
         action="living_place_action" />
 
 </odoo>

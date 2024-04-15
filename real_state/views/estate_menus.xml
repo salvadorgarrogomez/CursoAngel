@@ -2,6 +2,9 @@
 <odoo>
 
     <menuitem id="properties_menu" name="Real Estate" sequence="10" />
-    <menuitem id="adverti_menu_submenu" name="Advertisements" sequence="10" parent="properties_menu" />
+
+    <menuitem id="adverti_menu_submenu" name="Advertisements" sequence="20" parent="properties_menu" />
+
+    <menuitem id="settings_menu_submenu" name="Settings" sequence="30" parent="properties_menu" />
 
 </odoo>
