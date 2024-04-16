@@ -8,6 +8,18 @@
             <tree>
                 <field name="price" />
                 <field name="partner_id" />
+                <field name="validity" />
+                <field name="date_deadline" />
+                <button name="action_confirm"
+                    type="object"
+                    context="{}"
+                    icon="fa-check"
+                    string=" "/>
+                <button name="action_refused"
+                    type="object"
+                    context="{}"
+                    icon="fa-times"
+                    string=" "/>
                 <field name="status" />
             </tree>
         </field>
@@ -22,6 +34,18 @@
                     <group>
                         <field name="price" />
                         <field name="partner_id" />
+                        <field name="validity" />
+                        <field name="date_deadline" />
+                        <button name="action_confirm"
+                            type="object"
+                            context="{}"
+                            icon="fa-check"
+                            string=" "/>
+                        <button name="action_refused"
+                            type="object"
+                            context="{}"
+                            icon="fa-times"
+                            string=" "/>
                         <field name="status" />
                     </group>
                 </sheet>
