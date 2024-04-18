@@ -2,9 +2,11 @@ from datetime import datetime, timedelta
 from odoo import api, fields, models
 from odoo.exceptions import UserError, ValidationError
 
+
 class LivingPlace(models.Model):
     _name = "living.place"
     _description = "Living Place"
+    _order = "id desc"
 
     name = fields.Char(
         string = "Title",
@@ -78,7 +80,6 @@ class LivingPlace(models.Model):
          ('canceled', "Canceled")],
          string = "Status",
          default = "new",
-         readonly=True,
     )
 
     user_id = fields.Many2one(
@@ -157,3 +158,5 @@ class LivingPlace(models.Model):
         for record in self:
             if record.selling_price < 0:
                 raise ValidationError("The expected price must be strictly positive")
+            
+
