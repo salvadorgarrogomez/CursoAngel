@@ -77,7 +77,6 @@ class HelpdeskTicket(models.Model):
     )
 
 
-
     state = fields.Selection(
         [('nuevo', "Nuevo"),
          ('asignado', "Asignado"),
