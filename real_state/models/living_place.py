@@ -33,6 +33,7 @@ class LivingPlace(models.Model):
 
     selling_price = fields.Float(
         string = "Selling Price",
+        readonly=True,
     )
 
     bedrooms = fields.Integer(
@@ -74,8 +75,8 @@ class LivingPlace(models.Model):
 
     state = fields.Selection(
         [('new', "New"),
-         ('offer received', "Offer Recceived"),
-         ('offer Accepted', "Offer Accepted"),
+         ('offer_received', "Offer Recceived"),
+         ('offer_accepted', "Offer Accepted"),
          ('sold', "Sold"),
          ('canceled', "Canceled")],
          string = "Status",

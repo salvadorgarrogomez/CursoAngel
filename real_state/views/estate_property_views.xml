@@ -5,17 +5,24 @@
         <field name="name">view_living_place_tree</field>
         <field name="model">living.place</field>
         <field name="arch" type="xml">
-            <tree string="Livings">
+            <tree string="Livings"
+                decoration-success="state=='offer_received' or state=='offer_accepted'"
+                decoration-bf="state=='offer_accepted'"
+                decoration-muted="state=='sold'">
                 <field name="name" />
                 <field name="postcode" />
                 <field name="bedrooms" />
+                <field name="tags_id" widget="many2many_tags"
+                    options="{'color_field': 'color'}" />
                 <field name="living_area" />
                 <field name="expected_price" />
                 <field name="selling_price" />
-                <field name="date_availability" />
+                <field name="date_availability" optional="hide" />
+                <field name="state" invisible="True" />
             </tree>
         </field>
     </record>
+
 
     <record id="view_living_place_form" model="ir.ui.view">
         <field name="name">view_living_place_form</field>
@@ -26,11 +33,11 @@
                     <button string="Sold" name="value_sold"
                         type="object"
                         context="{}"
-                        attrs="{'invisible': [('state','=','sold'),('state','=','canceled')]}" />
+                        attrs="{'invisible': ['|', ('state','=','sold'), ('state','=','canceled')]}" />
                     <button string="Cancel" name="value_canceled"
                         type="object"
                         context="{}"
-                        attrs="{'invisible': [('state','=','canceled'),('state','=','sold')]}" />
+                        attrs="{'invisible': ['|', ('state','=','canceled'), ('state','=','sold')]}" />
                     <field name="state" widget="statusbar" />
                 </header>
                 <sheet>
@@ -72,7 +79,8 @@
                             </page>
                             <page string="Offers">
                                 <field name="offer_ids" context="{'default_user_id': user_id}">
-                                    <tree>
+                                    <tree editable="top" decoration-success="status=='accepted'"
+                                        decoration-danger="status=='refused'">
                                         <field name="price" />
                                         <field name="partner_id" />
                                         <field name="validity" />
@@ -81,13 +89,15 @@
                                             type="object"
                                             context="{}"
                                             icon="fa-check"
-                                            string=" " />
+                                            string=" "
+                                            attrs="{'invisible': ['|', ('status','=','accepted'), ('status','=','refused')]}" />
                                         <button name="action_refused"
                                             type="object"
                                             context="{}"
                                             icon="fa-times"
-                                            string=" " />
-                                        <field name="status" />
+                                            string=" "
+                                            attrs="{'invisible': ['|', ('status','=','accepted'), ('status','=','refused')]}" />
+                                        <field name="status" invisible="True" />
                                     </tree>
                                     <form>
                                         <group name="main">
@@ -100,13 +110,15 @@
                                                 context="{}"
                                                 icon="fa-check"
                                                 string=" "
-                                                invisible="True" />
+                                                invisible="True"
+                                                attrs="{'invisible': ['|', ('status','=','accepted'), ('status','=','refused')]}" />
                                             <button name="action_refused"
                                                 type="object"
                                                 context="{}"
                                                 icon="fa-times"
                                                 string=" "
-                                                invisible="True" />
+                                                invisible="True"
+                                                attrs="{'invisible': ['|', ('status','=','accepted'), ('status','=','refused')]}" />
                                             <field name="status" />
                                         </group>
                                     </form>
@@ -134,7 +146,7 @@
                 <field name="postcode" />
                 <field name="expected_price" />
                 <field name="bedrooms" />
-                <field name="living_area" />
+                <field name="living_area" filter_domain="[('living_area', '&gt;=', self)]" />
                 <field name="facades" />
                 <filter name="available" string="Available"
                     domain="[('state', '=', 'new')],[('state', '=', 'offer received')]" />
@@ -150,10 +162,13 @@
         <field name="name">Properties</field>
         <field name="res_model">living.place</field>
         <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_available': True}</field>
         <field name="help" type="html">
             <p>Add living places</p>
         </field>
+        <field name="search_view_id" ref="view_living_place_search" />
     </record>
+
 
     <menuitem id="adverti_menu" name="Properties" sequence="10" parent="adverti_menu_submenu"
         action="living_place_action" />

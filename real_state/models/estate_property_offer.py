@@ -29,6 +29,12 @@ class EstatePropertyOffer(models.Model):
         comodel_name='living.place',
     )
 
+    property_type_id = fields.Many2one(
+        related="property_id.property_type",
+        string="Property Type",
+        store=True,
+    )
+
     validity = fields.Integer(
         string="Validity (days)",
         default=7,

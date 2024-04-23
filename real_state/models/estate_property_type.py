@@ -8,7 +8,7 @@ class EstatePropertyType(models.Model):
     _order = "sequence"
 
     name = fields.Char(
-        required = True,
+        required=True,
     )
 
     sequence = fields.Integer()
@@ -17,6 +17,21 @@ class EstatePropertyType(models.Model):
         comodel_name='living.place',
         inverse_name='property_type',
     )
+
+    offer_ids = fields.One2many(
+        comodel_name='estate.property.offer', 
+        inverse_name='property_type_id', 
+        string="Property Offers",
+    )
+
+    offer_count = fields.Integer(
+        compute='_compute_offer_count',
+    )
+
+    def _compute_offer_count(self):
+        for prop_type in self:
+            prop_type.offer_count = len(prop_type.offer_ids)
+
 
     @api.constrains('name')
     def _check_unique_name(self):
